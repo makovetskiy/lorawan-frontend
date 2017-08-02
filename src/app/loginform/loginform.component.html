@@ -1,0 +1,38 @@
+
+  <div class="col-md-5">
+    <md-card class="login-card">
+      <md-card-header>
+        <md-toolbar>Вход</md-toolbar>
+      </md-card-header>
+      <md-card-content>
+        <md-tab-group>
+          <md-tab label="Вход">
+            <div class="container-fluid">
+              <form name="form" (ngSubmit)="f.form.valid && login()" #f="ngForm" novalidate>
+                <md-input-container [ngClass]="{ 'has-error': f.submitted && !UserName.valid }">
+                  <input mdInput placeholder="Логин" value="" class="form-control" name="UserName" [(ngModel)]="model.UserName" #UserName="ngModel"
+                    required />
+                  <div *ngIf="f.submitted && !UserName.valid" class="help-block">Username is required</div>
+                </md-input-container>
+                <br>
+                <md-input-container [ngClass]="{ 'has-error': f.submitted && !StoredPassword.valid }">
+                  <input mdInput type="password" placeholder="Пароль" value="" name="StoredPassword" [(ngModel)]="model.StoredPassword" #StoredPassword="ngModel"
+                    required>
+                  <div *ngIf="f.submitted && !StoredPassword.valid" class="help-block">Password is required</div>
+                </md-input-container>
+                <br>
+                <md-slide-toggle>Запомнить меня!</md-slide-toggle>
+                <md-card-actions>
+                  <button md-raised-button class="btn btn-outline-success" >Вход</button>
+                </md-card-actions>
+                <div *ngIf="error" class="alert alert-danger">{{error}}</div>
+              </form>
+            </div>
+          </md-tab>
+          <md-tab label="Регистрация">
+            <app-register></app-register>
+          </md-tab>
+        </md-tab-group>
+      </md-card-content>
+    </md-card>
+  </div>

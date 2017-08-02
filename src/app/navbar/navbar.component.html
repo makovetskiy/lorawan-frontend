@@ -1,0 +1,135 @@
+<md-sidenav-container class="dash-container">
+  <md-sidenav #mainsidenav class="dash-sidenav">
+    INFO
+  </md-sidenav>
+<nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand" href="#" >СПРУТ-М</a>
+    <button type="button" md-button (click)="mainsidenav.open()">
+      Open sidenav
+    </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      
+    </ul>
+    <ul class="navbar-nav mr-right">
+      <li class="nav-item">
+        <span mdTooltip="Мониторинг">
+          <a routerLink="/dash">
+            <i class="fa fa-bar-chart btn-icon " aria-hidden="true" ></i>
+          </a>
+        </span>
+      </li>
+      <li class="nav-item">
+        <span mdTooltip="Упавляющие компании">
+          <a routerLink="/dash">
+            <i class="fa fa-home btn-icon " aria-hidden="true" ></i>
+          </a>
+        </span>
+      </li>
+      <li class="nav-item">
+        <span mdTooltip="Абоненты">
+          <a routerLink="/dash">
+            <i class="fa fa-users btn-icon " aria-hidden="true" ></i>
+            <label class="hidden-sm-up hidden-md-up hidden-lg-up">Абонеты</label>
+          </a>
+        </span>
+      </li>
+      <li class="nav-item">
+        <span mdTooltip="Шлюзы">
+          <a routerLink="/dash">
+            <i class="fa fa-share-alt btn-icon " aria-hidden="true" ></i>
+            <label class="hidden-sm-up hidden-md-up hidden-lg-up">Шлюзы</label>
+          </a>
+        </span>
+      </li>
+      <li class="nav-item">
+        <span mdTooltip="Счетчики">
+          <a routerLink="/dash">
+            <i class="fa fa-tachometer btn-icon " aria-hidden="true" ></i>
+            <label class="hidden-sm-up hidden-md-up hidden-lg-up">Счетчики</label>
+          </a>
+        </span>
+      </li>
+      <li class="nav-item">
+        <span mdTooltip="Тарифы">
+          <a routerLink="/dash">
+            <i class="fa fa-rub btn-icon " aria-hidden="true" ></i>
+            <label class="hidden-sm-up hidden-md-up hidden-lg-up">Тарифы</label>
+          </a>
+        </span>
+      </li>
+      <li class="nav-item">
+        <span mdTooltip="Датчики">
+          <a routerLink="/dash">
+            <i class="fa fa-microchip btn-icon " aria-hidden="true" ></i>
+            <label class="hidden-sm-up hidden-md-up hidden-lg-up">Датчики</label>
+          </a>
+        </span>
+      </li>
+      <li class="nav-item">
+        <span mdTooltip="Радиомодули">
+          <a [routerLink]="['/dash', {outlets: {content: ['radiomodule']}}]">
+            <i class="fa fa-signal btn-icon " aria-hidden="true" ></i>
+            <label class="hidden-sm-up hidden-md-up hidden-lg-up">Радиомодули</label>
+          </a>
+        </span>
+      </li>
+      <li class="nav-item">
+        <span mdTooltip="Приложения">
+          <a [routerLink]="['/dash', {outlets: {content: ['application']}}]">
+            <i class="fa fa-cubes btn-icon " aria-hidden="true" ></i>
+            <label class="hidden-sm-up hidden-md-up hidden-lg-up">Приложения</label>
+          </a>
+        </span>
+      </li>
+      <li class="nav-item">
+        <span mdTooltip="Конфигурация">
+          <a [routerLink]="['/dash', {outlets: {content: ['config']}}]">
+            <i class="fa fa-cogs btn-icon " aria-hidden="true" ></i>
+          </a>
+        </span>
+      </li>
+      <li class="nav-item">
+        <span mdTooltip="Оповещения">
+          <a routerLink="/login">
+            <i class="fa fa-bell-o btn-icon " aria-hidden="true" ></i>
+          </a>
+        </span>
+      </li>
+      <li class="nav-item">
+        <span mdTooltip="Профиль!">
+          <a  [routerLink]="['/dash', {outlets: {content: ['profile']}}]">
+            <i class="fa fa-user-o btn-icon " aria-hidden="true" ></i>
+          </a>
+        </span>
+      </li>
+      <li class="nav-item">
+        <span mdTooltip="Справка!">
+          <a href="#">
+          <i class="fa fa-question-circle-o btn-icon " aria-hidden="true" ></i>
+          </a>
+        </span>
+      </li>
+      <li class="nav-item">
+        <span mdTooltip="Выход">
+          <a href="#">
+          <i class="fa fa-sign-out btn-icon " aria-hidden="true" ></i>
+          </a>
+        </span>
+      </li>
+    </ul>
+  </div>
+</nav>
+<div class="main-dash-content">
+  <div class="container-fluid">
+    <div class="row">
+      <main class="col-sm-12 col-md-12 pt-3">
+        <router-outlet name="content"></router-outlet>
+      </main>
+    </div>
+  </div>
+</div>
+</md-sidenav-container>

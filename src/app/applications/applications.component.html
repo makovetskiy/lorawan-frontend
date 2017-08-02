@@ -1,0 +1,72 @@
+<md-sidenav-container class="">
+  <md-sidenav #addAplication mode="side" opened="false" class="create-new-application-container">
+    <md-card>
+      <md-card-title>
+        <h2>Создание нового приложения</h2>
+      </md-card-title>
+      <md-card-content>
+        <div class="form-group">
+          <label>AppEUI</label>
+          <input class="form-control" name="AppEUI" type='text' [(ngModel)]="app.AppEUI"/>
+        </div>
+        <div class="form-group">
+          <label>Название</label>
+          <input class="form-control" name="Name" type="text" [(ngModel)]="app.Name"/>
+        </div>
+        <div class="form-group">
+          <label>Код</label>
+          <input class="form-control" type="text" name="Code" [(ngModel)]="app.Code"/>
+        </div>
+      </md-card-content>
+      <md-card-actions>
+        <button type="button" class="btn btn-outline-danger" (click)="addAplication.toggle()">
+                <i class="fa fa-ban" aria-hidden="true"></i> Отмена
+        </button>
+        <button type="button" class="btn btn-outline-success" (click)="submit(app)">
+                <i class="fa fa-plus" aria-hidden="true"></i> Сохранить
+        </button>
+      </md-card-actions>
+      <md-card-footer>
+
+      </md-card-footer>
+    </md-card>
+
+  </md-sidenav>
+
+<div class="applicaton-content">
+  <button type="button" class="btn btn-outline-success" (click)="addAplication.toggle()">
+              <i class="fa fa-plus" aria-hidden="true"></i> Создать
+</button>
+  <md-toolbar color="primary">
+    {{title}}
+    <md-input-container floatPlaceholder="never">
+      <input mdInput #filter placeholder="Поиск" (keyup)='updateFilter($event)'>
+    </md-input-container>
+  </md-toolbar>
+
+  <table class="table table-bordered table-hover">
+    <thead>
+      <tr>
+        <th>AppEUI</th>
+        <th>Название</th>
+        <th>Код обработчика</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of rows">
+        <td>{{item.AppEUI}}</td>
+        <td>{{item.Name}} </td>
+        <td>{{item.Code}}</td>
+        <td>
+          <span mdTooltip="Удалить">
+            <button type="button" class="btn btn-outline-danger">
+              <i class="fa fa-trash" aria-hidden="true"></i> 
+            </button>
+            </span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+</md-sidenav-container>

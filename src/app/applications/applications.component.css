@@ -1,0 +1,7 @@
+md-sidenav {
+  width: 100%;
+}
+md-sidenav-container{
+    min-height: 500px;
+    width: 100%;
+}

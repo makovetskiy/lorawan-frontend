@@ -1,0 +1,22 @@
+/* Structure */
+
+md-toolbar{
+  background-color:#673ab7;
+  color:#fff;
+}
+
+.radio-module-container {
+  height: 300px;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.radio-module-sidenav-content {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.radio-module-sidenav {
+  padding: 20px;
+}

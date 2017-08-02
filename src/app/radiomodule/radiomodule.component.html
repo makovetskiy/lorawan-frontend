@@ -1,0 +1,43 @@
+
+  <div class="radio-module-content">
+  <md-toolbar>
+    {{title}}
+    <md-input-container floatPlaceholder="never">
+      <input mdInput #filter placeholder="Поиск" (keyup)='updateFilter($event)'>
+    </md-input-container>
+  </md-toolbar>
+    
+  <table class="table table-bordered table-hover">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Название</th>
+        <th>Абонент</th>
+        <th>Тип устройства</th>
+        <th>Адрес</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of rows">
+        <td>{{item.USK_ID}}</td>
+        <td>{{item.USK_NAME}}</td>
+        <td>{{item.USK_AB_ID}}</td>
+        <td>{{item.USK_TYPE}}</td>
+        <td>{{item.USK_ADR_ID}}</td>
+        <td>
+          <span mdTooltip="Подробнее">
+            <button type="button" class="btn btn-outline-info">
+              <i class="fa fa-info" aria-hidden="true"></i>
+            </button>
+            </span>
+          <span mdTooltip="Удалить">
+            <button type="button" class="btn btn-outline-danger">
+              <i class="fa fa-trash" aria-hidden="true"></i> 
+            </button>
+            </span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

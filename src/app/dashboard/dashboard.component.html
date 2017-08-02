@@ -1,0 +1,177 @@
+<md-sidenav-container class="dash-container">
+  <md-sidenav #mainsidenav class="dash-sidenav" mode="side" opened="true">
+    <div class="nav-side-menu">
+    <div class="brand"><a class="navbar-brand" href="#" >СПРУТ-М</a></div>
+    <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
+  
+        <div class="menu-list">
+  
+            <ul id="menu-content" class="menu-content collapse out">
+                <li>
+                  <a href="#">
+                    <a routerLink="/dash">
+                      <i class="fa fa-bar-chart btn-icon " aria-hidden="true" ></i>Мониторинг
+                    </a>
+                  </a>
+                </li>
+
+                <li  data-toggle="collapse" data-target="#companies" class="collapsed active">
+                    <a routerLink="/dash">
+                      <i class="fa fa-home btn-icon " aria-hidden="true" ></i>
+                     Управляющие компании <span class="arrow"></span>
+                     </a>
+                </li>
+                <ul class="sub-menu collapse" id="companies">
+                    <li class="active"><a href="#">CSS3 Animation</a></li>
+                    <li><a href="#">General</a></li>
+                    <li><a href="#">Buttons</a></li>
+                    <li><a href="#">Tabs & Accordions</a></li>
+                    <li><a href="#">Typography</a></li>
+                    <li><a href="#">FontAwesome</a></li>
+                    <li><a href="#">Slider</a></li>
+                    <li><a href="#">Panels</a></li>
+                    <li><a href="#">Widgets</a></li>
+                    <li><a href="#">Bootstrap Model</a></li>
+                </ul>
+
+
+                <li data-toggle="collapse" data-target="#abonents" class="collapsed">
+                  <a routerLink="/dash">
+                    <i class="fa fa-users btn-icon " aria-hidden="true" ></i>
+                   Абонеты<span class="arrow"></span></a>
+                </li>  
+                <ul class="sub-menu collapse" id="abonents">
+                  <li><a [routerLink]="['/dash', {outlets: {content: ['abonent']}}]">Список абонентов</a></li>
+                  <li>Добавить нового абонента</li>
+                </ul>
+
+                <li data-toggle="collapse" data-target="#gateway" class="collapsed">
+                  <a routerLink="/dash">
+                    <i class="fa fa-share-alt btn-icon " aria-hidden="true" ></i>Шлюзы
+                  <span class="arrow"></span></a>
+                </li>  
+                <ul class="sub-menu collapse" id="gateway">
+                  <li>New Service 1</li>
+                  <li>New Service 2</li>
+                  <li>New Service 3</li>
+                </ul>
+
+                <li data-toggle="collapse" data-target="#tarifs" class="collapsed">
+                  <a routerLink="/dash">
+                  <i class="fa fa-rub btn-icon " aria-hidden="true" ></i>Тарифы
+                  <span class="arrow"></span></a>
+                </li>  
+                <ul class="sub-menu collapse" id="tarifs">
+                  <li>New Service 1</li>
+                  <li>New Service 2</li>
+                  <li>New Service 3</li>
+                </ul>
+
+                <li data-toggle="collapse" data-target="#meters" class="collapsed">
+                  <a routerLink="/dash">
+                  <i class="fa fa-tachometer btn-icon " aria-hidden="true" ></i>Счетчики
+                  <span class="arrow"></span></a>
+                </li>  
+                <ul class="sub-menu collapse" id="meters">
+                  <li>New Service 1</li>
+                  <li>New Service 2</li>
+                  <li>New Service 3</li>
+                </ul>
+
+                <li data-toggle="collapse" data-target="#sensors" class="collapsed">
+                  <a routerLink="/dash">
+                  <i class="fa fa-microchip btn-icon " aria-hidden="true" ></i>Датчики
+                  <span class="arrow"></span></a>
+                </li>  
+                <ul class="sub-menu collapse" id="sensors">
+                  <li>New Service 1</li>
+                  <li>New Service 2</li>
+                  <li>New Service 3</li>
+                </ul>
+
+                <li data-toggle="collapse" data-target="#radiomodules" class="collapsed">
+                  <a [routerLink]="['/dash', {outlets: {content: ['radiomodule']}}]">
+                    <i class="fa fa-signal btn-icon " aria-hidden="true" ></i>Радиомодули
+                          <span class="arrow"></span></a>
+                </li>  
+                <ul class="sub-menu collapse" id="radiomodules">
+                  <li><a [routerLink]="['/dash', {outlets: {content: ['radiomodule']}}]">Список радиомодулей</a></li>
+                  <li>Добавить новый радиомодуль</li>
+                  <li><a [routerLink]="['/dash', {outlets: {content: ['radiomoduletype']}}]">Типы радиомодулей</a></li>
+                </ul>
+
+                <li data-toggle="collapse" data-target="#applications" class="collapsed">
+                  <a [routerLink]="['/dash', {outlets: {content: ['application']}}]">
+                  <i class="fa fa-cubes btn-icon " aria-hidden="true" ></i>Приложения
+                          <span class="arrow"></span></a>
+                </li>  
+                <ul class="sub-menu collapse" id="applications">
+                  <li><a [routerLink]="['/dash', {outlets: {content: ['application']}}]">Все приложения</a></li>
+                  <li>Добавить новое </li>
+                </ul>
+            </ul>
+     </div>
+</div>
+  </md-sidenav>
+<nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  
+  <md-slide-toggle 
+    (click)="mainsidenav.toggle()" 
+    >
+  </md-slide-toggle>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      
+    </ul>
+    <ul class="navbar-nav mr-right">
+      <li class="nav-item">
+        <span mdTooltip="Конфигурация">
+          <a [routerLink]="['/dash', {outlets: {content: ['config']}}]">
+            <i class="fa fa-cogs btn-icon " aria-hidden="true" ></i>
+          </a>
+        </span>
+      </li>
+      <li class="nav-item">
+        <span mdTooltip="Оповещения">
+          <a routerLink="/login">
+            <i class="fa fa-bell-o btn-icon " aria-hidden="true" ></i>
+          </a>
+        </span>
+      </li>
+      <li class="nav-item">
+        <span mdTooltip="Профиль!">
+          <a  [routerLink]="['/dash', {outlets: {content: ['profile']}}]">
+            <i class="fa fa-user-o btn-icon " aria-hidden="true" ></i>
+          </a>
+        </span>
+      </li>
+      <li class="nav-item">
+        <span mdTooltip="Справка!">
+          <a href="#">
+          <i class="fa fa-question-circle-o btn-icon " aria-hidden="true" ></i>
+          </a>
+        </span>
+      </li>
+      <li class="nav-item">
+        <span mdTooltip="Выход">
+          <a href="#">
+          <i class="fa fa-sign-out btn-icon " aria-hidden="true" ></i>
+          </a>
+        </span>
+      </li>
+    </ul>
+  </div>
+</nav>
+<div class="main-dash-content">
+  <div class="container-fluid">
+    <div class="row">
+      <main class="col-sm-12 col-md-12 pt-3">
+        <router-outlet name="content"></router-outlet>
+      </main>
+    </div>
+  </div>
+</div>
+</md-sidenav-container>
