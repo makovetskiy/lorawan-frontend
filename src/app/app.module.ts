@@ -4,7 +4,6 @@ import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HttpModule} from '@angular/http';
 import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
-import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 
 import { AuthGuard } from './_guards/index';
 import { AuthenticationService, UserService } from './_services/index';
@@ -99,7 +98,6 @@ const appRoutes: Routes =[
     CdkTableModule,
     MdPaginatorModule,
     MdSortModule,
-    NgxDatatableModule,
     MdListModule
   ],
   providers: [
